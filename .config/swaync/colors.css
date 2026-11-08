@@ -1,16 +1,16 @@
 /* Gerado pelo matugen a partir do wallpaper. Não edite: é sobrescrito a cada troca de tema. */
 :root {
-  --cc-bg: rgba(15, 21, 17, 0.85);
-  --noti-border-color: #404942;
-  --noti-bg: 27, 33, 29;
+  --cc-bg: rgba(20, 20, 12, 0.85);
+  --noti-border-color: #49473a;
+  --noti-bg: 33, 32, 23;
   --noti-bg-alpha: 0.9;
-  --noti-bg-darker: #171d19;
-  --noti-bg-hover: #262b27;
-  --noti-bg-focus: #313632;
-  --noti-bg-alt: #262b27;
-  --noti-close-bg: #313632;
-  --noti-close-bg-hover: #374b3e;
-  --text-color: #dfe4dd;
-  --text-color-disabled: #8a938b;
-  --bg-selected: #93d5aa;
+  --noti-bg-darker: #1d1c14;
+  --noti-bg-hover: #2b2a21;
+  --noti-bg-focus: #36352c;
+  --noti-bg-alt: #2b2a21;
+  --noti-close-bg: #36352c;
+  --noti-close-bg-hover: #4a482c;
+  --text-color: #e7e2d5;
+  --text-color-disabled: #949181;
+  --bg-selected: #d1c973;
 }

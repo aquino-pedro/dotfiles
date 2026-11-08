@@ -26,7 +26,27 @@ $time\
 [ ](fg:blue)\
 $line_break$character"""
 
-palette = 'catppuccin_mocha'
+palette = 'matugen'
+
+# Gerado pelo matugen a partir do wallpaper. Edite o modelo em ~/.config/matugen/templates/starship.toml
+[palettes.matugen]
+surface0 = "#36352c"
+text = "#e7e2d5"
+peach = "#d1c973"
+on_peach = "#353100"
+green = "#4a482c"
+on_green = "#e9e4be"
+teal = "#4a482c"
+on_teal = "#e9e4be"
+blue = "#4d4800"
+on_blue = "#ede68c"
+mantle = "#1d1c14"
+base = "#14140c"
+red = "#ffb4ab"
+teste_verde = "#d1c973"
+lavender = "#a6d0ba"
+grey = "#949181"
+color_bg3 = "#2b2a21"
 
 [palettes.gruvbox_dark]
 color_fg0 = '#fbf1c7'
@@ -114,7 +134,7 @@ style_root = "bg:surface0 fg:text"
 format = '[ $user ]($style)'
 
 [directory]
-style = "fg:mantle bg:peach"
+style = "fg:on_peach bg:peach"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
@@ -129,56 +149,56 @@ truncation_symbol = "…/"
 [git_branch]
 symbol = ""
 style = "bg:teal"
-format = '[[ $symbol $branch ](fg:base bg:green)]($style)'
+format = '[[ $symbol $branch ](fg:on_green bg:green)]($style)'
 
 [git_status]
 style = "bg:teal"
-format = '[[($all_status$ahead_behind )](fg:base bg:green)]($style)'
+format = '[[($all_status$ahead_behind )](fg:on_green bg:green)]($style)'
 
 [nodejs]
 symbol = ""
 style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+format = '[[ $symbol( $version) ](fg:on_teal bg:teal)]($style)'
 
 [c]
 symbol = " "
 style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+format = '[[ $symbol( $version) ](fg:on_teal bg:teal)]($style)'
 
 [rust]
 symbol = ""
 style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+format = '[[ $symbol( $version) ](fg:on_teal bg:teal)]($style)'
 
 [golang]
 symbol = ""
 style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+format = '[[ $symbol( $version) ](fg:on_teal bg:teal)]($style)'
 
 [php]
 symbol = ""
 style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+format = '[[ $symbol( $version) ](fg:on_teal bg:teal)]($style)'
 
 [java]
 symbol = " "
 style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+format = '[[ $symbol( $version) ](fg:on_teal bg:teal)]($style)'
 
 [kotlin]
 symbol = ""
 style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+format = '[[ $symbol( $version) ](fg:on_teal bg:teal)]($style)'
 
 [haskell]
 symbol = ""
 style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+format = '[[ $symbol( $version) ](fg:on_teal bg:teal)]($style)'
 
 [python]
 symbol = ""
 style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+format = '[[ $symbol( $version) ](fg:on_teal bg:teal)]($style)'
 
 [docker_context]
 symbol = ""
@@ -189,7 +209,7 @@ format = '[[ $symbol( $context) ](fg:#83a598 bg:color_bg3)]($style)'
 disabled = false
 time_format = "%R"
 style = "bg:peach"
-format = '[[  $time ](fg:mantle bg:blue)]($style)'
+format = '[[  $time ](fg:on_blue bg:blue)]($style)'
 
 [line_break]
 disabled = false

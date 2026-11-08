@@ -44,3 +44,15 @@ post_hook = '/home/pedro/.local/bin/recolorir-pastas'
 [templates.mycal]
 input_path = '~/.config/matugen/templates/mycal.toml'
 output_path = '~/.cache/mycal/matugen.toml'
+
+[templates.starship]
+input_path = '~/.config/matugen/templates/starship.toml'
+output_path = '~/.config/starship.toml'
+
+[templates.fastfetch]
+input_path = '~/.config/matugen/templates/fastfetch.jsonc'
+output_path = '~/.config/fastfetch/config.jsonc'
+
+[templates.fetch]
+input_path = '~/.config/matugen/templates/fetch.conf'
+output_path = '~/.config/fetch/config'

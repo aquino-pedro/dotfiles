@@ -57,3 +57,8 @@ alias vim='nvim'
 alias glog='PAGER="less -F -X" git log'                                          # -F quit if one screen
 alias gadog='PAGER="less -F -X" git log --all --decorate --oneline --graph'
 
+fetch-modo() {
+  [[ "$1" == (fetch|fastfetch) ]] || { echo "uso: fetch-modo fetch | fetch-modo fastfetch"; return 1; }
+  echo "$1" > ~/.config/zsh/fetch-modo && echo "próximo terminal abre com $1"
+}
+

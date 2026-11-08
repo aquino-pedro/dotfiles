@@ -1,0 +1,24 @@
+#!/bin/sh
+# Escolhe o logo do fastfetch entre os desenhos .txt de ~/.config/fastfetch.
+# Uso: trocar-logo          -> lista os logos
+#      trocar-logo arch2    -> usa logo-arch2.txt (aceita o nome com ou sem "logo-" e ".txt")
+dir="$HOME/.config/fastfetch"
+
+if [ -z "$1" ]; then
+    atual=$(readlink "$dir/logo-atual.txt")
+    for f in "$dir"/*.txt; do
+        n=${f##*/}
+        [ "$n" = "logo-atual.txt" ] && continue
+        [ "$n" = "$atual" ] && echo "* $n (atual)" || echo "  $n"
+    done
+    exit 0
+fi
+
+for n in "$1" "$1.txt" "logo-$1.txt"; do
+    if [ -f "$dir/$n" ] && [ "$n" != "logo-atual.txt" ]; then
+        ln -sfn "$n" "$dir/logo-atual.txt" && fastfetch
+        exit 0
+    fi
+done
+echo "logo não encontrado: $1 (rode trocar-logo para ver a lista)"
+exit 1

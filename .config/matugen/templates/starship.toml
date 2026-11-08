@@ -1,0 +1,224 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+[](surface0)\
+$os\
+$username\
+[](bg:peach fg:surface0)\
+$directory\
+[](fg:peach bg:green)\
+$git_branch\
+$git_status\
+[](fg:green bg:teal)\
+$c\
+$rust\
+$golang\
+$nodejs\
+$php\
+$java\
+$kotlin\
+$haskell\
+$python\
+[](fg:teal bg:blue)\
+$docker_context\
+[](fg:blue bg:blue)\
+$time\
+[ ](fg:blue)\
+$line_break$character"""
+
+palette = 'matugen'
+
+# Gerado pelo matugen a partir do wallpaper. Edite o modelo em ~/.config/matugen/templates/starship.toml
+[palettes.matugen]
+surface0 = "{{colors.surface_container_highest.default.hex}}"
+text = "{{colors.on_surface.default.hex}}"
+peach = "{{colors.primary.default.hex}}"
+on_peach = "{{colors.on_primary.default.hex}}"
+green = "{{colors.secondary_container.default.hex}}"
+on_green = "{{colors.on_secondary_container.default.hex}}"
+teal = "{{colors.secondary_container.default.hex}}"
+on_teal = "{{colors.on_secondary_container.default.hex}}"
+blue = "{{colors.primary_container.default.hex}}"
+on_blue = "{{colors.on_primary_container.default.hex}}"
+mantle = "{{colors.surface_container_low.default.hex}}"
+base = "{{colors.surface.default.hex}}"
+red = "{{colors.error.default.hex}}"
+teste_verde = "{{colors.primary.default.hex}}"
+lavender = "{{colors.tertiary.default.hex}}"
+grey = "{{colors.outline.default.hex}}"
+color_bg3 = "{{colors.surface_container_high.default.hex}}"
+
+[palettes.gruvbox_dark]
+color_fg0 = '#fbf1c7'
+color_bg1 = '#3c3836'
+color_bg3 = '#665c54'
+color_blue = '#458588'
+color_aqua = '#689d6a'
+color_green = '#98971a'
+color_orange = '#d65d0e'
+color_purple = '#b16286'
+color_red = '#cc241d'
+color_yellow = '#d79921'
+
+###################################
+######### My color pallet #########
+###################################
+color1 = '#292e42'
+color2 = '#151f51'
+color3 = '#2539aa'
+color4 = '#373ed1'
+color5 = '#0614aa'
+color6 = '#236aa4'
+color7 = '#2485db'
+###################################
+###################################
+
+
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+orange = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#2539aa" #trocado
+yellow = "#f9e2af"
+green = "#151f51" #trocado
+teal = "#0614aa" #trocado
+blue = "#236aa4" #trocado
+sapphire = "#236aa4" #trocado
+teste_verde ="#1f8a5a" #trocado
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"
+
+[os]
+disabled = false
+style = "bg:surface0 fg:text"
+
+[os.symbols]
+Windows = "󰍲"
+Ubuntu = "󰕈"
+SUSE = ""
+Raspbian = "󰐿"
+Mint = "󰣭"
+Macos = ""
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛"
+Alpine = ""
+Amazon = ""
+Android = ""
+Arch = "󰣇"
+Artix = "󰣇"
+CentOS = ""
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
+
+[username]
+show_always = true
+style_user = "bg:surface0 fg:text"
+style_root = "bg:surface0 fg:text"
+format = '[ $user ]($style)'
+
+[directory]
+style = "fg:on_peach bg:peach"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = "󰝚 "
+"Pictures" = " "
+"Developer" = "󰲋 "
+
+[git_branch]
+symbol = ""
+style = "bg:teal"
+format = '[[ $symbol $branch ](fg:on_green bg:green)]($style)'
+
+[git_status]
+style = "bg:teal"
+format = '[[($all_status$ahead_behind )](fg:on_green bg:green)]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:teal"
+format = '[[ $symbol( $version) ](fg:on_teal bg:teal)]($style)'
+
+[c]
+symbol = " "
+style = "bg:teal"
+format = '[[ $symbol( $version) ](fg:on_teal bg:teal)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:teal"
+format = '[[ $symbol( $version) ](fg:on_teal bg:teal)]($style)'
+
+[golang]
+symbol = ""
+style = "bg:teal"
+format = '[[ $symbol( $version) ](fg:on_teal bg:teal)]($style)'
+
+[php]
+symbol = ""
+style = "bg:teal"
+format = '[[ $symbol( $version) ](fg:on_teal bg:teal)]($style)'
+
+[java]
+symbol = " "
+style = "bg:teal"
+format = '[[ $symbol( $version) ](fg:on_teal bg:teal)]($style)'
+
+[kotlin]
+symbol = ""
+style = "bg:teal"
+format = '[[ $symbol( $version) ](fg:on_teal bg:teal)]($style)'
+
+[haskell]
+symbol = ""
+style = "bg:teal"
+format = '[[ $symbol( $version) ](fg:on_teal bg:teal)]($style)'
+
+[python]
+symbol = ""
+style = "bg:teal"
+format = '[[ $symbol( $version) ](fg:on_teal bg:teal)]($style)'
+
+[docker_context]
+symbol = ""
+style = "bg:mantle"
+format = '[[ $symbol( $context) ](fg:#83a598 bg:color_bg3)]($style)'
+
+[time]
+disabled = false
+time_format = "%R"
+style = "bg:peach"
+format = '[[  $time ](fg:on_blue bg:blue)]($style)'
+
+[line_break]
+disabled = false
+
+[character]
+disabled = false
+success_symbol = '[](bold fg:teste_verde)'
+error_symbol = '[](bold fg:red)'
+vimcmd_symbol = '[](bold fg:grey)'
+vimcmd_replace_one_symbol = '[](bold fg:blue)'
+vimcmd_replace_symbol = '[](bold fg:blue)'
+vimcmd_visual_symbol = '[](bold fg:lavender)'

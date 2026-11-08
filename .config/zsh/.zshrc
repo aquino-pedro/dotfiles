@@ -83,4 +83,6 @@ source "$ZDOTDIR/plugins.zsh"
 # Prompt/theme
 source "$ZDOTDIR/prompt.zsh"
 
-fastfetch
+# fetch ao abrir o terminal: fastfetch (padrão) ou fetch (Arch 3D). Trocar com: fetch-modo fetch | fetch-modo fastfetch
+"$(cat ~/.config/zsh/fetch-modo 2>/dev/null || echo fastfetch)"
+

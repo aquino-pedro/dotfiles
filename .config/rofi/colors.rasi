@@ -1,11 +1,11 @@
 /* Gerado pelo matugen a partir do wallpaper. Não edite: é sobrescrito a cada troca de tema. */
 * {
-    bg0: #0f1511F2;
-    bg1: #1b211d;
-    bg2: #31363280;
-    bg3: #93d5aa;
-    fg0: #dfe4dd;
-    fg1: #003920;
-    fg2: #c0c9c0;
-    fg3: #8a938b;
+    bg0: #14140cF2;
+    bg1: #212017;
+    bg2: #36352c80;
+    bg3: #d1c973;
+    fg0: #e7e2d5;
+    fg1: #353100;
+    fg2: #cbc7b5;
+    fg3: #949181;
 }
