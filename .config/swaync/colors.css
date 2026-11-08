@@ -1,0 +1,16 @@
+/* Gerado pelo matugen a partir do wallpaper. Não edite: é sobrescrito a cada troca de tema. */
+:root {
+  --cc-bg: rgba(15, 21, 17, 0.85);
+  --noti-border-color: #404942;
+  --noti-bg: 27, 33, 29;
+  --noti-bg-alpha: 0.9;
+  --noti-bg-darker: #171d19;
+  --noti-bg-hover: #262b27;
+  --noti-bg-focus: #313632;
+  --noti-bg-alt: #262b27;
+  --noti-close-bg: #313632;
+  --noti-close-bg-hover: #374b3e;
+  --text-color: #dfe4dd;
+  --text-color-disabled: #8a938b;
+  --bg-selected: #93d5aa;
+}

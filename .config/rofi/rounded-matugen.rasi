@@ -1,0 +1,3 @@
+/* Mesmo visual do rounded, cores do wallpaper (colors.rasi, gerado pelo matugen) */
+@import "colors.rasi"
+@import "rounded-template.rasi"

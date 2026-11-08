@@ -1,0 +1,29 @@
+#!/bin/sh
+# Escolhe um wallpaper e pinta o sistema inteiro com as cores dele (matugen).
+# Uso: trocar-tema            -> abre o seletor com miniaturas
+#      trocar-tema foto.jpg   -> aplica direto
+dir="$HOME/Images/Wallpapers"
+img="$1"
+
+if [ -z "$img" ]; then
+    # shortcut: rofi lê as fotos em tamanho cheio; se abrir devagar com muitas fotos, gerar miniaturas em cache
+    escolha=$(for f in "$dir"/*; do
+        case "$f" in *.jpg|*.jpeg|*.png|*.webp|*.JPG|*.JPEG|*.PNG) printf '%s\0icon\037%s\n' "${f##*/}" "$f" ;; esac
+    done | rofi -dmenu -i -show-icons -p "Tema" -theme-str '
+        window   { location: center; y-offset: 0; width: 760px; }
+        listview { columns: 3; lines: 2; spacing: 8px; }
+        element  { orientation: vertical; children: [ element-icon ]; padding: 6px; border-radius: 16px; }
+        element-icon { size: 225px; }') || exit 0
+    img="$dir/$escolha"
+fi
+
+[ -f "$img" ] || { notify-send "Tema" "Imagem não encontrada: $img"; exit 1; }
+img=$(realpath "$img")
+
+ln -sfn "$img" "$HOME/.config/hypr/wallpaper-atual"   # lido pelo hyprpaper ao ligar e pela tela de bloqueio
+for m in $(hyprctl monitors -j | jq -r '.[].name'); do
+    hyprctl hyprpaper wallpaper "$m,$img,cover" >/dev/null
+done
+matugen image "$img" -m dark -t scheme-tonal-spot --prefer saturation >/dev/null 2>&1 \
+    || { notify-send "Tema" "O matugen falhou com ${img##*/}"; exit 1; }
+notify-send -i "$img" "Tema aplicado" "${img##*/}"

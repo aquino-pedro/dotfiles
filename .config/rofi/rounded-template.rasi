@@ -84,6 +84,7 @@ element alternate active {
 
 element selected normal, element selected active {
     background-color:   @bg3;
+    text-color:         @fg1;
 }
 
 element-icon {

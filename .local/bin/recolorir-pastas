@@ -1,0 +1,48 @@
+#!/usr/bin/env python3
+"""Recolore as pastas do Adwaita com a cor do tema atual.
+
+Cria o tema de ícones "Adwaita-Tema": herda tudo do Adwaita e só troca as pastas,
+mudando o tom de azul delas para o tom da cor principal do tema (o desenho fica igual).
+A cor vem de ~/.local/share/icons/Adwaita-Tema/cor, gravada pelo matugen.
+"""
+import colorsys, pathlib, re, subprocess
+
+ORIGEM = pathlib.Path("/usr/share/icons/Adwaita/scalable/places")
+TEMA = pathlib.Path.home() / ".local/share/icons/Adwaita-Tema"
+AZUIS = ["#438de6", "#62a0ea", "#a4caee", "#afd4ff", "#c0d5ea"]  # os únicos azuis das pastas do Adwaita
+
+
+def hls(h):
+    return colorsys.rgb_to_hls(*(int(h[i:i + 2], 16) / 255 for i in (1, 3, 5)))
+
+
+def no_tom(azul, matiz):
+    _, l, s = hls(azul)  # mantém claro/escuro e saturação do Adwaita, troca só o tom
+    return "#" + "".join(f"{round(c * 255):02x}" for c in colorsys.hls_to_rgb(matiz, l, s))
+
+
+def main():
+    matiz = hls((TEMA / "cor").read_text().strip())[0]
+    troca = {a: no_tom(a, matiz) for a in AZUIS}
+    destino = TEMA / "scalable/places"
+    destino.mkdir(parents=True, exist_ok=True)
+    for svg in ORIGEM.glob("*.svg"):
+        texto = svg.read_text()
+        if not any(a in texto for a in AZUIS) or svg.name == "network-workgroup.svg":
+            continue
+        novo = re.sub("|".join(AZUIS), lambda m: troca[m.group(0)], texto)
+        (destino / svg.name).write_text(novo)
+    (TEMA / "index.theme").write_text(
+        "[Icon Theme]\nName=Adwaita-Tema\nComment=Adwaita com as pastas na cor do wallpaper\n"
+        "Inherits=Adwaita,hicolor\nDirectories=scalable/places\n\n"
+        "[scalable/places]\nSize=128\nMinSize=8\nMaxSize=512\nType=Scalable\nContext=Places\n")
+    # os apps abertos só recarregam os ícones quando o tema de ícones muda
+    gs = ["gsettings", "set", "org.gnome.desktop.interface", "icon-theme"]
+    atual = subprocess.run(gs[:1] + ["get"] + gs[2:], capture_output=True, text=True).stdout.strip().strip("'")
+    if atual == "Adwaita-Tema":
+        subprocess.run(gs + ["Adwaita"])
+    subprocess.run(gs + ["Adwaita-Tema"])
+
+
+if __name__ == "__main__":
+    main()

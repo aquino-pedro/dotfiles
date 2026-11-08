@@ -1,0 +1,46 @@
+[config]
+
+[templates.hyprland]
+input_path = '~/.config/matugen/templates/hyprland-colors.lua'
+output_path = '~/.config/hypr/colors.lua'
+post_hook = 'hyprctl reload'
+
+[templates.hyprlock]
+input_path = '~/.config/matugen/templates/hyprlock-colors.conf'
+output_path = '~/.config/hypr/hyprlock/colors.conf'
+
+[templates.kitty]
+input_path = '~/.config/matugen/templates/kitty-colors.conf'
+output_path = '~/.config/kitty/colors.conf'
+post_hook = 'pkill -USR1 -x kitty'
+
+[templates.waybar]
+input_path = '~/.config/matugen/templates/waybar-colors.css'
+output_path = '~/.config/waybar/colors.css'
+post_hook = 'pkill -USR2 -x waybar'
+
+[templates.rofi]
+input_path = '~/.config/matugen/templates/rofi-colors.rasi'
+output_path = '~/.config/rofi/colors.rasi'
+
+[templates.swaync]
+input_path = '~/.config/matugen/templates/swaync-colors.css'
+output_path = '~/.config/swaync/colors.css'
+post_hook = 'swaync-client -rs'
+
+[templates.gtk3]
+input_path = '~/.config/matugen/templates/gtk3.css'
+output_path = '~/.config/gtk-3.0/gtk.css'
+
+[templates.gtk4]
+input_path = '~/.config/matugen/templates/gtk4.css'
+output_path = '~/.config/gtk-4.0/gtk.css'
+
+[templates.icones]
+input_path = '~/.config/matugen/templates/icones-cor.txt'
+output_path = '~/.local/share/icons/Adwaita-Tema/cor'
+post_hook = '/home/pedro/.local/bin/recolorir-pastas'
+
+[templates.mycal]
+input_path = '~/.config/matugen/templates/mycal.toml'
+output_path = '~/.cache/mycal/matugen.toml'

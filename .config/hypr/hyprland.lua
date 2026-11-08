@@ -17,6 +17,8 @@
 -- Create your files separately and then require them like this:
 -- require("myColors")
 
+local ok, cores = pcall(require, "colors")
+if not ok then cores = { active_border = { colors = {"rgba(33ccffee)", "rgba(00ff99ee)"}, angle = 45 }, inactive_border = "rgba(595959aa)" } end
 
 ------------------
 ---- MONITORS ----
@@ -101,7 +103,6 @@ hl.env("XCURSOR_SIZE", "20")
 hl.env("HYPRCURSOR_SIZE", "20")
 hl.env("HYPRSHOT_DIR", "/home/pedro/Images/Screenshots")
 
-
 -----------------------
 ----- PERMISSIONS -----
 -----------------------
@@ -134,8 +135,9 @@ hl.config({
         border_size = 2,
 
         col = {
-            active_border   = { colors = {"rgba(33ccffee)", "rgba(00ff99ee)"}, angle = 45 },
-            inactive_border = "rgba(595959aa)",
+                        active_border   = cores.active_border,
+            inactive_border = cores.inactive_border,
+
         },
 
         -- Set to true to enable resizing windows by clicking and dragging on borders and gaps
@@ -362,6 +364,12 @@ hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
 -- Clipboard history com cliphist + rofi
 hl.bind(mainMod .. " + SHIFT + V", hl.dsp.exec_cmd("~/.config/rofi/scripts/cliphist-menu.sh"))
+
+-- hyprpicker
+hl.bind(mainMod .. "+ SHIFT + P", hl.dsp.exec_cmd("hyprpicker -a -n"))
+
+-- change wallpaper and themes
+hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("trocar-tema"))
 
 
 -- Laptop multimedia keys for volume and LCD brightness

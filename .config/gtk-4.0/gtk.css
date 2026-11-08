@@ -1,0 +1,27 @@
+/* Gerado pelo matugen a partir do wallpaper. Não edite: é sobrescrito a cada troca de tema. */
+:root {
+  --accent-bg-color: #93d5aa;
+  --accent-fg-color: #003920;
+  --accent-color: #93d5aa;
+  --destructive-bg-color: #ffb4ab;
+  --destructive-fg-color: #690005;
+  --window-bg-color: #171d19;
+  --window-fg-color: #dfe4dd;
+  --view-bg-color: #0f1511;
+  --view-fg-color: #dfe4dd;
+  --headerbar-bg-color: #1b211d;
+  --headerbar-fg-color: #dfe4dd;
+  --headerbar-backdrop-color: #171d19;
+  --sidebar-bg-color: #1b211d;
+  --sidebar-fg-color: #dfe4dd;
+  --sidebar-backdrop-color: #171d19;
+  --secondary-sidebar-bg-color: #171d19;
+  --secondary-sidebar-fg-color: #dfe4dd;
+  --card-bg-color: #262b27;
+  --card-fg-color: #dfe4dd;
+  --dialog-bg-color: #262b27;
+  --dialog-fg-color: #dfe4dd;
+  --popover-bg-color: #262b27;
+  --popover-fg-color: #dfe4dd;
+  --thumbnail-bg-color: #262b27;
+}

@@ -17,4 +17,4 @@ configuration{
 
 //@theme "/usr/share/rofi/themes/material.rasi"
 
-@theme "~/.config/rofi/rounded-blue-dark.rasi"
+@theme "~/.config/rofi/rounded-matugen.rasi"
